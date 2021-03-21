@@ -1,5 +1,5 @@
 {
-  "name": "form-ts",
+  "name": "forms-ts",
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
@@ -8,12 +8,12 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/nazarpunk/form-ts.git"
+    "url": "git+https://github.com/nazarpunk/forms-ts.git"
   },
   "author": "nazarpunk",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/nazarpunk/form-ts/issues"
+    "url": "https://github.com/nazarpunk/forms-ts/issues"
   },
-  "homepage": "https://github.com/nazarpunk/form-ts#readme"
+  "homepage": "https://github.com/nazarpunk/forms-ts#readme"
 }
