@@ -1,6 +1,27 @@
 // noinspection JSUnusedGlobalSymbols
 const Forms = {
 
+	data2json: ($form: HTMLFormElement):string => {
+		const data = new FormData($form);
+		let obj: any = {};
+		data.forEach((v, k) => {
+			k = k.replace(/\[[0-9_a-z]*]/, ``);
+			if (!Reflect.has(obj, k)) {
+				obj[k] = v;
+				return;
+			}
+			if (!Array.isArray(obj[k])) obj[k] = [obj[k]];
+			obj[k].push(v);
+		});
+		return JSON.stringify(obj);
+	},
+
+	data: ($form: HTMLFormElement | undefined, data: { [key: string]: string | number }): FormData => {
+		const fd = new FormData($form);
+		for (const key in data) fd.append(key, data[key].toString());
+		return fd;
+	},
+
 	fixate: ($form: HTMLFormElement) => {
 		for (const $e of $form.elements) {
 			if (!($e instanceof HTMLElement)) continue;
