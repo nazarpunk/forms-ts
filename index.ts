@@ -1,7 +1,7 @@
 // noinspection JSUnusedGlobalSymbols
 const Forms = {
 
-	data2json: ($form: HTMLFormElement):string => {
+	data2json: ($form: HTMLFormElement): string => {
 		const data = new FormData($form);
 		let obj: any = {};
 		data.forEach((v, k) => {
@@ -50,7 +50,10 @@ const Forms = {
 		let changed: HTMLElement[] = [];
 		for (const $e of $form.elements) {
 			if (!($e instanceof HTMLElement)) continue;
+			if (!$e.hasAttribute(`name`)) continue;
+
 			let c = false;
+
 			switch ($e.nodeName.toLowerCase()) {
 				case `select`:
 					if (!($e instanceof HTMLSelectElement)) continue;
